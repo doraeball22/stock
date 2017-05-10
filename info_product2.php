@@ -102,7 +102,7 @@
  -->
                                     <?php 
                                     $query1 = "SELECT Wholesalers_Name FROM wholesalers where Wholesalers_ID='".$rows['Wholesalers_ID']."'";
-                                    $query2 = "SELECT productType_Name FROM product_type where productType_ID= '".$rows['productType_ID']."'"; 
+                                    $query2 = "SELECT productType_Name FROM product_type where ProductType_ID= '".$rows['ProductType_ID']."'"; 
                                     $result1 = mysqli_query($conn,$query1);
                                     $result2 = mysqli_query($conn,$query2);
 

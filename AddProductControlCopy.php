@@ -28,7 +28,7 @@ $addpro->Numstock=$_POST["Numstock"];
 $addpro->SafetyStock=$_POST["SafetyStock"];
 $addpro->ExpDate=date('Y-m-d', $time);echo date('Y-m-d', $time);
 $addpro->Wholesalers_ID=$_POST["Wholesalers_ID"];
-$addpro->productType_ID=$_POST["productType_ID"];
+$addpro->ProductType_ID=$_POST["ProductType_ID"];
 $addpro->addproduct($conn,$addpro); 
 
 	?>

@@ -906,7 +906,7 @@
                                     <div class="form-group">
                                      <label class="form-label">ประเภทสินค้า/dropdown</label>
                                         <div class="form-line">
-                                              <input type="text" class="form-control" name="productType_ID" placeholder="productType_ID" required>
+                                              <input type="text" class="form-control" name="ProductType_ID" placeholder="ProductType_ID" required>
                                         </div>
                                     </div>
                                 </div>

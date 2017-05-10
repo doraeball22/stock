@@ -104,7 +104,7 @@
                                         <td><?php echo $rows['ExpDate']; ?></td>
 
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
-                                        <td><?php echo $rows['productType_ID']; ?></td>
+                                        <td><?php echo $rows['ProductType_ID']; ?></td>
                                        
                                     <td> 
                                     

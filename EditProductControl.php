@@ -20,7 +20,7 @@
 		    	$editpro->SafetyStock=$_POST["SafetyStock"];
 		    	$editpro->ExpDate=$_POST["ExpDate"];
 		    	$editpro->Wholesalers_ID=$_POST["Wholesalers_ID"];
-		    	$editpro->productType_ID=$_POST["productType_ID"];
+		    	$editpro->ProductType_ID=$_POST["ProductType_ID"];
 		    	$editpro->editproduct($conn,$editpro); 
 
 

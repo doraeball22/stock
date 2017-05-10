@@ -104,7 +104,7 @@
                                         <td><?php echo $rows['ExpDate']; ?></td>
 
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
-                                        <td><?php echo $rows['productType_ID']; ?></td>
+                                        <td><?php echo $rows['ProductType_ID']; ?></td>
                                         <td>
                                              
                                     <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteproductControl.php">    
@@ -125,7 +125,7 @@
                                     <input type="hidden" name="SafetyStock" value="<?php echo $rows['SafetyStock']; ?>">
                                     <input type="hidden" name="ExpDate" value="<?php echo $rows['ExpDate']; ?>">
                                     <input type="hidden" name="Wholesalers_ID" value="<?php echo $rows['Wholesalers_ID']; ?>">
-                                    <input type="hidden" name="productType_ID" value="<?php echo $rows['productType_ID']; ?>">
+                                    <input type="hidden" name="ProductType_ID" value="<?php echo $rows['ProductType_ID']; ?>">
                                     
 
 

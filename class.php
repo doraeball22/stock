@@ -148,7 +148,7 @@ else
 		public	function editproduct($conn,$editpro)
 		{
 		echo " <script type='text/javascript'>alert('$editpro->Product_ID');</script>";
-		$editpro="UPDATE product SET Product_Name = '$editpro->Product_Name', Price = '$editpro->Price',Unit = '$editpro->Unit',Numstock = '$editpro->Numstock',ExpDate = '$editpro->ExpDate',Wholesalers_ID = '$editpro->Wholesalers_ID',productType_ID = '$editpro->productType_ID' WHERE Product_ID='".$editpro->Product_ID."'";
+		$editpro="UPDATE product SET Product_Name = '$editpro->Product_Name', Price = '$editpro->Price',Unit = '$editpro->Unit',Numstock = '$editpro->Numstock',ExpDate = '$editpro->ExpDate',Wholesalers_ID = '$editpro->Wholesalers_ID',ProductType_ID = '$editpro->ProductType_ID' WHERE Product_ID='".$editpro->Product_ID."'";
 
 
 
@@ -183,8 +183,8 @@ else
 				public function addproduct($conn,$addpro)
 									{
 
-											$sql = "INSERT INTO product (Product_Name,Price,Unit,Numstock,SafetyStock,ExpDate,Wholesalers_ID,productType_ID)
-				VALUES ('".$addpro->Product_Name."','".$addpro->Price."','".$addpro->Unit."','".$addpro->Numstock."','".$addpro->SafetyStock."','".$addpro->ExpDate."','".$addpro->Wholesalers_ID."','".$addpro->productType_ID."')" ;
+											$sql = "INSERT INTO product (Product_Name,Price,Unit,Numstock,SafetyStock,ExpDate,Wholesalers_ID,ProductType_ID)
+				VALUES ('".$addpro->Product_Name."','".$addpro->Price."','".$addpro->Unit."','".$addpro->Numstock."','".$addpro->SafetyStock."','".$addpro->ExpDate."','".$addpro->Wholesalers_ID."','".$addpro->ProductType_ID."')" ;
 											if ($conn->query($sql) === TRUE)	{
 											$message = "Insert New product success!";
 											echo "<script type='text/javascript'>alert('$message');</script>";

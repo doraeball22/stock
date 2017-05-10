@@ -37,7 +37,7 @@
         $SafetyStock=$_POST["SafetyStock"];
         $ExpDate=$_POST["ExpDate"];
         // $Wholesalers_ID=$_POST["Wholesalers_ID"];
-        // $productType_ID=$_POST["productType_ID"];
+        // $ProductType_ID=$_POST["ProductType_ID"];
         
         
     ?>       

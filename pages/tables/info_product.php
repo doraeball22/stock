@@ -662,7 +662,7 @@
                                         <td><?php echo $rows['Price']; ?></td> 
                                         <td><?php echo $rows['Product_Brand']; ?></td>
                                         <td><?php echo $rows['product_Detail']; ?></td>
-                                        <td><?php echo $rows['productType_ID']; ?></td>
+                                        <td><?php echo $rows['ProductType_ID']; ?></td>
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
                                         <td><?php echo $rows['ExpDate']; ?></td>
 

@@ -55,7 +55,7 @@
         $SafetyStock=$_POST["SafetyStock"];
         $ExpDate=$_POST["ExpDate"];
         $Wholesalers_ID=$_POST["Wholesalers_ID"];
-        $productType_ID=$_POST["productType_ID"];
+        $ProductType_ID=$_POST["ProductType_ID"];
         
         
     ?>       
@@ -730,12 +730,12 @@
                                 </div>
                                  <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="Username">productType_ID</label>
+                                        <label for="Username">ProductType_ID</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                               <input type="text" class="form-control" name="productType_ID" placeholder="productType_ID" value='<?php echo $productType_ID ?>'>
+                                               <input type="text" class="form-control" name="ProductType_ID" placeholder="ProductType_ID" value='<?php echo $ProductType_ID ?>'>
                             
                                             </div>
                                         </div>

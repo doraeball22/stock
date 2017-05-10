@@ -166,12 +166,12 @@
                                        
 
 
-                                        <select name="productType_ID" class="form-control" >
+                                        <select name="ProductType_ID" class="form-control" >
                                                    <option>เลือกประเภทสินค้า</option>
                                                  
                                                   <?php
                                                     
-                                                    $sql1 = "SELECT productType_ID,productType_Name FROM product_type ";
+                                                    $sql1 = "SELECT ProductType_ID,productType_Name FROM product_type ";
                                                     $result1 = $conn->query($sql1);
 
 
@@ -179,7 +179,7 @@
                                                       
                                                             ?>
                                                                 
-                                                                <option value="<?php echo $row2['productType_ID']; ?>" >
+                                                                <option value="<?php echo $row2['ProductType_ID']; ?>" >
 
                                                                 <?php echo $row2['productType_Name']; ?> </option>
 
