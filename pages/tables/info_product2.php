@@ -38,7 +38,7 @@
           {
              echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
           }
-        $query = "SELECT * FROM Product";
+        $query = "SELECT * FROM product";
         $result = mysqli_query($conn,$query)
          
         
@@ -92,8 +92,8 @@
 
                         <tbody>
                                     <tr>
-                                        <td><?php echo $rows['Product_ID']; ?></td>
-                                        <td><?php echo $rows['Product_Name']; ?></td>  
+                                        <td><?php echo $rows['product_ID']; ?></td>
+                                        <td><?php echo $rows['product_Name']; ?></td>  
                                         <td><?php echo $rows['Price']; ?></td> 
                                     
                                         <td><?php echo $rows['Unit']; ?></td>
@@ -104,11 +104,11 @@
                                         <td><?php echo $rows['ExpDate']; ?></td>
 
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
-                                        <td><?php echo $rows['ProductType_ID']; ?></td>
+                                        <td><?php echo $rows['productType_ID']; ?></td>
                                         <td>
                                              
-                                    <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteProductControl.php">    
-                                         <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
+                                    <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteproductControl.php">    
+                                         <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
 
                                          <button class="btn btn-primary waves-effect"   data-type="confirm">Delete</button>
                                     </form> </td>
@@ -117,15 +117,15 @@
                                     
                                     <form name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="edit_product.php">
 
-                                    <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
-                                    <input type="hidden" name="Product_Name" value="<?php echo $rows['Product_Name']; ?>">
+                                    <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
+                                    <input type="hidden" name="product_Name" value="<?php echo $rows['product_Name']; ?>">
                                     <input type="hidden" name="Price" value="<?php echo $rows['Price']; ?>">
                                     <input type="hidden" name="Unit" value="<?php echo $rows['Unit']; ?>">
                                     <input type="hidden" name="Numstock" value="<?php echo $rows['Numstock']; ?>">
                                     <input type="hidden" name="SafetyStock" value="<?php echo $rows['SafetyStock']; ?>">
                                     <input type="hidden" name="ExpDate" value="<?php echo $rows['ExpDate']; ?>">
                                     <input type="hidden" name="Wholesalers_ID" value="<?php echo $rows['Wholesalers_ID']; ?>">
-                                    <input type="hidden" name="ProductType_ID" value="<?php echo $rows['ProductType_ID']; ?>">
+                                    <input type="hidden" name="productType_ID" value="<?php echo $rows['productType_ID']; ?>">
                                     
 
 

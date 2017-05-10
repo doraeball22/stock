@@ -8,7 +8,7 @@
 
 
 <?php
-        require("Class.php");
+        require("class.php");
         
         $servername = "localhost";
  $username = "root";
@@ -55,7 +55,7 @@
                          
                         </div>
                         <div class="body">
-                         <form id="addproduct" method="POST" action="AddProductControlCopy.php">
+                         <form id="addproduct" method="POST" action="AddproductControlCopy.php">
 
                          <html>
            
@@ -64,7 +64,7 @@
                                     
                                          <label class="form-label">ชื่อสินค้า</label>
                                                                                 
-                                           <input type="text" class="form-control" name="Product_Name" placeholder="Product_Name" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}" required autofocus>
+                                           <input type="text" class="form-control" name="product_Name" placeholder="product_Name" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}" required autofocus>
                                        
                                     
                                 </div>
@@ -166,12 +166,12 @@
                                        
 
 
-                                        <select name="ProductType_ID" class="form-control" >
+                                        <select name="productType_ID" class="form-control" >
                                                    <option>เลือกประเภทสินค้า</option>
                                                  
                                                   <?php
                                                     
-                                                    $sql1 = "SELECT ProductType_ID,ProductType_Name FROM product_type ";
+                                                    $sql1 = "SELECT productType_ID,productType_Name FROM product_type ";
                                                     $result1 = $conn->query($sql1);
 
 
@@ -179,9 +179,9 @@
                                                       
                                                             ?>
                                                                 
-                                                                <option value="<?php echo $row2['ProductType_ID']; ?>" >
+                                                                <option value="<?php echo $row2['productType_ID']; ?>" >
 
-                                                                <?php echo $row2['ProductType_Name']; ?> </option>
+                                                                <?php echo $row2['productType_Name']; ?> </option>
 
                                                                   <?php } 
 
@@ -254,7 +254,7 @@
             $("#addcategoryname").val("");
             $("#addcategoryname").focus();
         }
-        function openProductImage(url,title) {
+        function openproductImage(url,title) {
             $("#productimageModal").modal({
                 backdrop: "true"
             });

@@ -1,5 +1,5 @@
 <?php
-			require("Class.php");
+			require("class.php");
 
 			$editu = new User;
 

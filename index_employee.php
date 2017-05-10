@@ -74,7 +74,7 @@ $return = count($result);
           {
              echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
           }
-        $query = "SELECT * FROM Product";
+        $query = "SELECT * FROM product";
        
         $result = mysqli_query($conn,$query)
          
@@ -116,8 +116,8 @@ $return = count($result);
                             while($rows=mysqli_fetch_array($result)){ 
                         ?> 
                                     <tr>
-                                        <td align=right><?php echo $rows['Product_ID']; ?></td>
-                                        <td><?php echo $rows['Product_Name']; ?></td>  
+                                        <td align=right><?php echo $rows['product_ID']; ?></td>
+                                        <td><?php echo $rows['product_Name']; ?></td>  
                                         <td align=right ><?php echo number_format($rows['Price'], 2, '.', ','); ?></td>  
                                     
                                         <td><?php echo $rows['Unit']; ?></td>
@@ -125,7 +125,7 @@ $return = count($result);
 
                                     <?php 
                                     $query1 = "SELECT Wholesalers_Name FROM wholesalers where Wholesalers_ID='".$rows['Wholesalers_ID']."'";
-                                    $query2 = "SELECT ProductType_Name FROM product_type where ProductType_ID= '".$rows['ProductType_ID']."'"; 
+                                    $query2 = "SELECT productType_Name FROM product_type where productType_ID= '".$rows['productType_ID']."'"; 
                                     $result1 = mysqli_query($conn,$query1);
                                     $result2 = mysqli_query($conn,$query2);
 
@@ -134,7 +134,7 @@ $return = count($result);
                                         <?php
                                     }
                                     while($rows2=mysqli_fetch_array($result2)){ ?>
-                                        <td><?php echo $rows2['ProductType_Name']; ?></td>
+                                        <td><?php echo $rows2['productType_Name']; ?></td>
                                         <?php
                                     }
 ?>

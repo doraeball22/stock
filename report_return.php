@@ -15,7 +15,7 @@ else{
 	$end='2017-03-13';
 }
    
-    $result =$database->query("SELECT product.Product_ID,product.Product_Name,SUM(returnorder_detail.NumberReturn) as NumberReturn,sum(returnorder_detail.TotalPay) as TotalPay FROM product INNER JOIN returnorder_detail ON product.Product_ID=returnorder_detail.Product_ID JOIN returnoder  where returnoder.ReturnDate BETWEEN '".$stat."' AND '".$end."' GROUP BY product.Product_ID")->findAll() ;
+    $result =$database->query("SELECT product.product_ID,product.product_Name,SUM(returnorder_detail.NumberReturn) as NumberReturn,sum(returnorder_detail.TotalPay) as TotalPay FROM product INNER JOIN returnorder_detail ON product.product_ID=returnorder_detail.product_ID JOIN returnoder  where returnoder.ReturnDate BETWEEN '".$stat."' AND '".$end."' GROUP BY product.product_ID")->findAll() ;
 // print_r($result);exit;
 ?>
 <!-- Top Bar -->
@@ -149,8 +149,8 @@ else{
 
 		                                <tr>
 		                                    <td align=right><?=$index;?></td>
-		                                    <td align=right><?=$field->Product_ID;?></td>	
-		                                    <td ><?=$field->Product_Name;?></td>           
+		                                    <td align=right><?=$field->product_ID;?></td>	
+		                                    <td ><?=$field->product_Name;?></td>           
 		                                    <td align=right><?=$field->NumberReturn;?></td>
 		                                    <td align=right><?=number_format($field->TotalPay, 2, '.', ',');?></td>
 		                                    

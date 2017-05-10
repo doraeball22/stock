@@ -827,14 +827,14 @@
                             </ul>
                         </div>
                         <div class="body">
-                         <form id="addproduct" method="POST" action="../../AddProductControl.php">
+                         <form id="addproduct" method="POST" action="../../AddproductControl.php">
                               
                             <div class="row clearfix">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                          <label class="form-label">ชื่อสินค้า</label>
                                          <div class="form-line">                                       
-                                           <input type="text" class="form-control" name="Product_Name" placeholder="Product_Name" required>
+                                           <input type="text" class="form-control" name="product_Name" placeholder="product_Name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -906,7 +906,7 @@
                                     <div class="form-group">
                                      <label class="form-label">ประเภทสินค้า/dropdown</label>
                                         <div class="form-line">
-                                              <input type="text" class="form-control" name="ProductType_ID" placeholder="ProductType_ID" required>
+                                              <input type="text" class="form-control" name="productType_ID" placeholder="productType_ID" required>
                                         </div>
                                     </div>
                                 </div>

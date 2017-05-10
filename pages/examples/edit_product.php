@@ -43,19 +43,19 @@
             $conn = new mysqli($hostname_connectDB, $username_connectDB,$password_connectDB, $database_connectDB);
             mysqli_set_charset($conn,"utf8");
        
-        $query = "SELECT * FROM Product";
+        $query = "SELECT * FROM product";
         $result = mysqli_query($conn,$query);
        
        
-        $Product_ID=$_POST['Product_ID'];
-        $Product_Name=$_POST["Product_Name"];
+        $product_ID=$_POST['product_ID'];
+        $product_Name=$_POST["product_Name"];
         $Price=$_POST["Price"];
         $Unit=$_POST["Unit"];
         $Numstock=$_POST["Numstock"];
         $SafetyStock=$_POST["SafetyStock"];
         $ExpDate=$_POST["ExpDate"];
         $Wholesalers_ID=$_POST["Wholesalers_ID"];
-        $ProductType_ID=$_POST["ProductType_ID"];
+        $productType_ID=$_POST["productType_ID"];
         
         
     ?>       
@@ -635,16 +635,16 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <form class="form-horizontal" method="POST" action="../../EditProductControl.php"> 
+                            <form class="form-horizontal" method="POST" action="../../EditproductControl.php"> 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="Product_Name">ชื่อสินค้า</label>
+                                        <label for="product_Name">ชื่อสินค้า</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                             <input type="text" class="form-control" name="Product_Name" placeholder="ชื่อ-สกุล" value='<?php echo $Product_Name ?>' required autofocus/>
-                         <input type="hidden" name="Product_ID" value='<?php echo $Product_ID ?>'/>
+                                             <input type="text" class="form-control" name="product_Name" placeholder="ชื่อ-สกุล" value='<?php echo $product_Name ?>' required autofocus/>
+                         <input type="hidden" name="product_ID" value='<?php echo $product_ID ?>'/>
                                             </div>
                                         </div>
                                     </div>
@@ -730,12 +730,12 @@
                                 </div>
                                  <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="Username">ProductType_ID</label>
+                                        <label for="Username">productType_ID</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                               <input type="text" class="form-control" name="ProductType_ID" placeholder="ProductType_ID" value='<?php echo $ProductType_ID ?>'>
+                                               <input type="text" class="form-control" name="productType_ID" placeholder="productType_ID" value='<?php echo $productType_ID ?>'>
                             
                                             </div>
                                         </div>

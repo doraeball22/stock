@@ -15,7 +15,7 @@ else{
 	$stat='2017-03-09';
 	$end='2017-03-13';
 }
-    $result =$database->query("SELECT product.Product_ID,product.Product_Name,SUM(po_detail.Quantity) AS Quantity,SUM(po_detail.TotalPay) as TotalPay FROM product INNER JOIN po_detail ON product.Product_ID=po_detail.Product_ID JOIN purchaseorder  where purchaseorder.PO_OutDate BETWEEN '".$stat."' AND '".$end."' GROUP BY product.Product_ID")->findAll() ;
+    $result =$database->query("SELECT product.product_ID,product.product_Name,SUM(po_detail.Quantity) AS Quantity,SUM(po_detail.TotalPay) as TotalPay FROM product INNER JOIN po_detail ON product.product_ID=po_detail.product_ID JOIN purchaseorder  where purchaseorder.PO_OutDate BETWEEN '".$stat."' AND '".$end."' GROUP BY product.product_ID")->findAll() ;
 	
 
 // print_r($result);exit;
@@ -165,8 +165,8 @@ else{
 
 		                                <tr>
 		                                    <td align=right><?=$index;?></td>
-		                                    <td align=right><?=$field->Product_ID;?></td>	
-		                                    <td ><?=$field->Product_Name;?></td>           
+		                                    <td align=right><?=$field->product_ID;?></td>	
+		                                    <td ><?=$field->product_Name;?></td>           
 		                                    <td align=right><?=$field->Quantity;?></td>
 		                                    <td align=right><?=number_format($field->TotalPay, 2, '.', ',');?></td>
 

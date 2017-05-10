@@ -1,9 +1,9 @@
 <?php
 // print_r($_POST);exit(); 
- require("Class.php");
+ require("class.php");
 
 $time = strtotime($_POST["ExpDate"]);//;วันที่
- $addpro = new Product;
+ $addpro = new product;
 
 $servername = "localhost";
  $username = "root";
@@ -13,13 +13,13 @@ $servername = "localhost";
 $conn = new mysqli($servername, $username, $password,$database);
  mysqli_set_charset($conn,"utf8");
 // print_r($_POST);exit();
- $query = "SELECT * FROM Product WHERE Product_Name = '" . $_POST['Product_Name'] . "'";
+ $query = "SELECT * FROM product WHERE product_Name = '" . $_POST['product_Name'] . "'";
 			$result = mysqli_query($conn, $query);
 			if (mysqli_fetch_array($result) > 0) {
-				echo "<script type=\"text/javascript\">alert(\"Name Product Already Exists\");window.location.href='add_product.php';</script>";
+				echo "<script type=\"text/javascript\">alert(\"Name product Already Exists\");window.location.href='add_product.php';</script>";
 				die();
 			};
-$addpro->Product_Name=$_POST["Product_Name"];
+$addpro->product_Name=$_POST["product_Name"];
 
 $addpro->Price=$_POST["Price"];
 // $addpro->Price=number_format( $_POST["Price"] , 2 )."<br />";
@@ -28,7 +28,7 @@ $addpro->Numstock=$_POST["Numstock"];
 $addpro->SafetyStock=$_POST["SafetyStock"];
 $addpro->ExpDate=date('Y-m-d', $time);echo date('Y-m-d', $time);
 $addpro->Wholesalers_ID=$_POST["Wholesalers_ID"];
-$addpro->ProductType_ID=$_POST["ProductType_ID"];
+$addpro->productType_ID=$_POST["productType_ID"];
 $addpro->addproduct($conn,$addpro); 
 
 	?>
@@ -41,7 +41,7 @@ $addpro->addproduct($conn,$addpro);
 
 // $sql = "INSERT INTO requisition (Requisition_ID,Requisition_Date,UserID,Name,DeliveryDate,Status) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["UserID"]."','".$_POST["Name"]."','".""."','"."0"."')" ;
 
-// $sql2="INSERT INTO requisition_detail (Requisition_ID,Requisition_Date,TotalPay,Number_Req,Product_ID) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["TotalPay"]."','".$_POST["Number_Req"]."','".$_POST["Product_ID"]."')" ;  
+// $sql2="INSERT INTO requisition_detail (Requisition_ID,Requisition_Date,TotalPay,Number_Req,product_ID) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["TotalPay"]."','".$_POST["Number_Req"]."','".$_POST["product_ID"]."')" ;  
 
 
 

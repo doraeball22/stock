@@ -38,7 +38,7 @@
           {
              echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
           }
-        $query = "SELECT * FROM Product";
+        $query = "SELECT * FROM product";
        
         $result = mysqli_query($conn,$query)
          
@@ -85,8 +85,8 @@
                             while($rows=mysqli_fetch_array($result)){ 
                         ?> 
                                     <tr>
-                                        <td align=right><?php echo $rows['Product_ID']; ?></td>
-                                        <td ><?php echo $rows['Product_Name']; ?></td>  
+                                        <td align=right><?php echo $rows['product_ID']; ?></td>
+                                        <td ><?php echo $rows['product_Name']; ?></td>  
                                         <td align=right ><?php echo number_format($rows['Price'], 2, '.', ','); ?></td> 
 
                                     
@@ -102,7 +102,7 @@
  -->
                                     <?php 
                                     $query1 = "SELECT Wholesalers_Name FROM wholesalers where Wholesalers_ID='".$rows['Wholesalers_ID']."'";
-                                    $query2 = "SELECT ProductType_Name FROM product_type where ProductType_ID= '".$rows['ProductType_ID']."'"; 
+                                    $query2 = "SELECT productType_Name FROM product_type where productType_ID= '".$rows['productType_ID']."'"; 
                                     $result1 = mysqli_query($conn,$query1);
                                     $result2 = mysqli_query($conn,$query2);
 
@@ -111,15 +111,15 @@
                                         <?php
                                     }
                                     while($rows2=mysqli_fetch_array($result2)){ ?>
-                                        <td ><?php echo $rows2['ProductType_Name']; ?></td>
+                                        <td ><?php echo $rows2['productType_Name']; ?></td>
                                         <?php
                                     }
 ?>
                
                                         <td>
                                              
-                                    <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteProductControl.php">    
-                                         <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
+                                    <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteproductControl.php">    
+                                         <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
 
                                          <button class="btn btn-danger waves-effect "   data-type="confirm">ลบ</button>
                                     </form> </td>
@@ -128,15 +128,15 @@
                                     
                                     <form name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="edit_product.php" >
 
-                                    <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
-                                    <input type="hidden" name="Product_Name" value="<?php echo $rows['Product_Name']; ?>">
+                                    <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
+                                    <input type="hidden" name="product_Name" value="<?php echo $rows['product_Name']; ?>">
                                     <input type="hidden" name="Price" value="<?php echo $rows['Price']; ?>" >
                                     <input type="hidden" name="Unit" value="<?php echo $rows['Unit']; ?>">
                                     <input type="hidden" name="Numstock" value="<?php echo $rows['Numstock']; ?>">
                                     <input type="hidden" name="SafetyStock" value="<?php echo $rows['SafetyStock']; ?>">
                                     <input type="hidden" name="ExpDate" value="<?php echo $rows['ExpDate']; ?>">
                                     <input type="hidden" name="Wholesalers_Name" value="<?php echo $rows['Wholesalers_Name']; ?>">
-                                    <input type="hidden" name="ProductType_Name" value="<?php echo $rows['ProductType_Name']; ?>">
+                                    <input type="hidden" name="productType_Name" value="<?php echo $rows['productType_Name']; ?>">
                                     
 
 

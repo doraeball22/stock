@@ -1,7 +1,7 @@
 <?php
 session_start();
 // var_dump($_POST);die();
-$allPosts = $_POST['Product_ID'];
+$allPosts = $_POST['product_ID'];
 $countPosts = count($allPosts);
 
 //;วันที่
@@ -18,7 +18,7 @@ $sql = "INSERT INTO purchaseorder (PO_ID,PO_OutDate,UserID,Name,Status,Wholesale
 $database->query($sql);
 
 for ($i=0; $i < $countPosts; $i++) { 
-	$sql2="INSERT INTO po_detail (TotalPay,Product_ID,Quantity,PO_ID,created_date,updated_date) VALUES ('".$_POST["TotalPay"][$i]."','".$_POST["Product_ID"][$i]."','".$_POST["Quantity"][$i]."','".$_POST["PO_ID"]."','"."0"."','"."0"."')" ;  
+	$sql2="INSERT INTO po_detail (TotalPay,product_ID,Quantity,PO_ID,created_date,updated_date) VALUES ('".$_POST["TotalPay"][$i]."','".$_POST["product_ID"][$i]."','".$_POST["Quantity"][$i]."','".$_POST["PO_ID"]."','"."0"."','"."0"."')" ;  
 	$database->query($sql2);
 }
 

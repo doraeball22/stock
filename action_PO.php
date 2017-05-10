@@ -27,7 +27,7 @@ if ($_POST['status'] == 1){
 	 
 	foreach ($items as $field) {
 
-		$result =  $database->query("UPDATE product SET Numstock = Numstock + ".$field->Quantity." WHERE Product_ID = '".$field->Product_ID."' " );
+		$result =  $database->query("UPDATE product SET Numstock = Numstock + ".$field->Quantity." WHERE product_ID = '".$field->product_ID."' " );
 
 	}
 

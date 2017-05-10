@@ -18,7 +18,7 @@ else{
 	$end='เลือกช่วงเวลาสิ้นสุด';
 }
 
-    $result =$database->query("SELECT product.Product_ID,product.Product_Name,sum(requisition_detail.Number_Req) as Number_Req,sum(requisition_detail.TotalPay) as TotalPay FROM product JOIN requisition_detail ON product.Product_ID=requisition_detail.Product_ID JOIN requisition where requisition.Requisition_Date BETWEEN '".$stat."' AND '".$end."' GROUP BY product.Product_ID")->findAll() ;
+    $result =$database->query("SELECT product.product_ID,product.product_Name,sum(requisition_detail.Number_Req) as Number_Req,sum(requisition_detail.TotalPay) as TotalPay FROM product JOIN requisition_detail ON product.product_ID=requisition_detail.product_ID JOIN requisition where requisition.Requisition_Date BETWEEN '".$stat."' AND '".$end."' GROUP BY product.product_ID")->findAll() ;
 	
 
 ?>
@@ -159,8 +159,8 @@ else{
 
 		                                <tr>
 		                                    <td align=right><?=$index;?></td>
-		                                    <td align=right><?=$field->Product_ID;?></td>	
-		                                    <td align=right><?=$field->Product_Name;?></td>           
+		                                    <td align=right><?=$field->product_ID;?></td>	
+		                                    <td align=right><?=$field->product_Name;?></td>           
 		                                    <td align=right><?=$field->Number_Req;?></td>
 		                                    <td align=right><?=$field->TotalPay;?></td>
 		                                 

@@ -1,7 +1,7 @@
 <?php
-			require("Class.php");
+			require("class.php");
 
-			$editpro = new Product;
+			$editpro = new product;
 
 			$servername = "localhost";
 			$username = "root";
@@ -12,15 +12,15 @@
 			mysqli_set_charset($conn,"utf8");
 
 		    	
-		    	$editpro->Product_ID=$_POST['Product_ID'];
-		    	$editpro->Product_Name=$_POST["Product_Name"];
+		    	$editpro->product_ID=$_POST['product_ID'];
+		    	$editpro->product_Name=$_POST["product_Name"];
 		    	$editpro->Price=$_POST["Price"];
 		    	$editpro->Unit=$_POST["Unit"];
 		    	$editpro->Numstock=$_POST["Numstock"];
 		    	$editpro->SafetyStock=$_POST["SafetyStock"];
 		    	$editpro->ExpDate=$_POST["ExpDate"];
 		    	$editpro->Wholesalers_ID=$_POST["Wholesalers_ID"];
-		    	$editpro->ProductType_ID=$_POST["ProductType_ID"];
+		    	$editpro->productType_ID=$_POST["productType_ID"];
 		    	$editpro->editproduct($conn,$editpro); 
 
 

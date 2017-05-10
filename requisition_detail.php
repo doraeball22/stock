@@ -14,15 +14,15 @@ $result1 =  $database->query("SELECT * From requisition where Requisition_ID='".
 // print_r($result1);exit();
 
 
-$result =  $database->query("SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,R.Status FROM Product AS P JOIN requisition_detail AS R ON P.Product_ID = R.Product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'" )->findAll();
+$result =  $database->query("SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.product_ID = R.product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'" )->findAll();
 
 
-// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,R.Status FROM Product AS P JOIN requisition_detail AS R ON P.Product_ID = R.Product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
+// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.product_ID = R.product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
 
-// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,Re.Status 
+// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,Re.Status 
 // FROM requisition_detail AS R
 // JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID
-// JOIN product AS P ON R.Product_ID= P.Product_ID
+// JOIN product AS P ON R.product_ID= P.product_ID
 // where Re.Requisition_ID='".$_GET['id']."' ORDER BY Status ASC"
  //print_r($result);exit;
 ?>
@@ -102,8 +102,8 @@ $result =  $database->query("SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Re
 		                                <tr>
 		                                    <td><?=$index;?></td>
 		                                    
-		                                    <td align=right><?=$field->Product_ID;?></td>
-		                                   <td><?=$field->Product_Name;?></td>
+		                                    <td align=right><?=$field->product_ID;?></td>
+		                                   <td><?=$field->product_Name;?></td>
 		                                 	<td align=right><?=$field->Numstock;?></td>
 		                                    <td align=right><?=$field->Numstock>=$field->Number_Req?$field->Number_Req:'<font color="red">'.$field->Number_Req.'</font>';?></td>
 		                                    
@@ -118,8 +118,8 @@ $result =  $database->query("SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Re
 
 			                                    if ($field->Status == 0) {
 			                                    	echo '<td>
-			                                    			<button type="button" class="btn btn-default btn-confirm" data-toggle="modal" data-target="#myModal" data-id="'.$field->Product_ID.'">อนุมัติ</button>
-		                                    				<button type="button" class="btn btn-danger btn-cancle" data-id="'.$field->Product_ID.'">ไม่อนุมัติ</button>
+			                                    			<button type="button" class="btn btn-default btn-confirm" data-toggle="modal" data-target="#myModal" data-id="'.$field->product_ID.'">อนุมัติ</button>
+		                                    				<button type="button" class="btn btn-danger btn-cancle" data-id="'.$field->product_ID.'">ไม่อนุมัติ</button>
 		                                    			</td>';
 			                                    }
 			                                    if ($field->Status == 1) {

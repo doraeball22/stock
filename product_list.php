@@ -38,7 +38,7 @@
           {
              echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
           }
-        $query = "SELECT * FROM Product" ;
+        $query = "SELECT * FROM product" ;
         $result = mysqli_query($conn,$query)
          
         
@@ -92,8 +92,8 @@
 
                         <tbody>
                                     <tr>
-                                        <td><?php echo $rows['Product_ID']; ?></td>
-                                        <td><?php echo $rows['Product_Name']; ?></td>  
+                                        <td><?php echo $rows['product_ID']; ?></td>
+                                        <td><?php echo $rows['product_Name']; ?></td>  
                                         <td><?php echo $rows['Price']; ?></td> 
                                     
                                         <td><?php echo $rows['Unit']; ?></td>
@@ -104,14 +104,14 @@
                                         <td><?php echo $rows['ExpDate']; ?></td>
 
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
-                                        <td><?php echo $rows['ProductType_ID']; ?></td>
+                                        <td><?php echo $rows['productType_ID']; ?></td>
                                        
                                     <td> 
                                     
                                     <form name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="requisition_list.php">
 
-                                    <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
-                                    <input type="hidden" name="Product_Name" value="<?php echo $rows['Product_Name']; ?>">
+                                    <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
+                                    <input type="hidden" name="product_Name" value="<?php echo $rows['product_Name']; ?>">
                                     <input type="hidden" name="Price" value="<?php echo $rows['Price']; ?>">
                                     <input type="hidden" name="Unit" value="<?php echo $rows['Unit']; ?>">
                                     

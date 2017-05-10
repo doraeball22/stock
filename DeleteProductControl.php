@@ -2,7 +2,7 @@
  			require("class.php");
  			//require_once('class.upload.php') ;
 
-		$detproduct = new Product;
+		$detproduct = new product;
 
 		$servername = "localhost";
         $username = "root";
@@ -21,7 +21,7 @@
 
 			//$query = mysqli_query($conn,"SELECT * FROM `page` WHERE 1");
 
-			$detproduct->Product_ID=$_POST['Product_ID'];
+			$detproduct->product_ID=$_POST['product_ID'];
 			$detproduct->deleteproduct($conn,$detproduct);	
 	
 	?>

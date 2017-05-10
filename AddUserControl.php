@@ -2,7 +2,7 @@
 
 //print_r($result);exit;
 
-			require("Class.php");
+			require("class.php");
 
 			$adduser = new User;
 

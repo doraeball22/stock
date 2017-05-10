@@ -609,7 +609,7 @@
           {
              echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
           }
-        $query = "SELECT * FROM Product";
+        $query = "SELECT * FROM product";
         $result = mysqli_query($conn,$query)
          
         
@@ -657,12 +657,12 @@
 
                         <tbody>
                                     <tr>
-                                        <td><?php echo $rows['Product_ID']; ?></td>
-                                        <td><?php echo $rows['Product_Name']; ?></td>  
+                                        <td><?php echo $rows['product_ID']; ?></td>
+                                        <td><?php echo $rows['product_Name']; ?></td>  
                                         <td><?php echo $rows['Price']; ?></td> 
-                                        <td><?php echo $rows['Product_Brand']; ?></td>
-                                        <td><?php echo $rows['Product_Detail']; ?></td>
-                                        <td><?php echo $rows['ProductType_ID']; ?></td>
+                                        <td><?php echo $rows['product_Brand']; ?></td>
+                                        <td><?php echo $rows['product_Detail']; ?></td>
+                                        <td><?php echo $rows['productType_ID']; ?></td>
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>
                                         <td><?php echo $rows['ExpDate']; ?></td>
 
