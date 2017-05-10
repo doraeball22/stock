@@ -10,7 +10,7 @@ if ($_POST['status'] == 1){
 $items =  $database->query("SELECT * FROM requisition_detail WHERE Requisition_ID = ".$_POST['id'])->findAll();
 
 foreach ($items as $field) {
-	$result =  $database->query("UPDATE product SET Numstock= Numstock - ".$field->Number_Req." WHERE product_ID = ".$field->product_ID);
+	$result =  $database->query("UPDATE product SET Numstock= Numstock - ".$field->Number_Req." WHERE Product_ID = ".$field->Product_ID);
 }
 
 

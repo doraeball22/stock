@@ -22,9 +22,9 @@ $product =  $database->query("SELECT * FROM product")->findAll();
 
 <?php 
 
- if (isset($_POST['product_ID'])) {
-	$pid="where product.product_ID='".$_POST['product_ID']."'";
-	$num=$_POST['product_Name'];
+ if (isset($_POST['Product_ID'])) {
+	$pid="where product.Product_ID='".$_POST['Product_ID']."'";
+	$num=$_POST['Product_Name'];
 
 
 }
@@ -38,19 +38,19 @@ else{
  // $sort=array();
  // $n=0;
 
-    $result =$database->query("SELECT product.product_ID,product.product_Name,po_detail.Quantity,purchaseorder.PO_OutDate,purchaseorder.Status FROM product JOIN po_detail ON product.product_ID=po_detail.product_ID JOIN purchaseorder ON po_detail.PO_ID= purchaseorder.PO_ID ".$pid."" )->findAll() ;
+    $result =$database->query("SELECT product.Product_ID,product.Product_Name,po_detail.Quantity,purchaseorder.PO_OutDate,purchaseorder.Status FROM product JOIN po_detail ON product.Product_ID=po_detail.Product_ID JOIN purchaseorder ON po_detail.PO_ID= purchaseorder.PO_ID ".$pid."" )->findAll() ;
 
     // foreach ($result as $item) {
-    // 	$sort[$n]['id']=item->product_ID
-    // 	$sort[$n]['name']=item->product_Name
+    // 	$sort[$n]['id']=item->Product_ID
+    // 	$sort[$n]['name']=item->Product_Name
     // 	$sort[$n]['num']=item->Quantity
     // 	$sort[$n]['date']=item->PO_OutDate
     // 	$sort[$n]['status']=item->}
     
 	
-	$result2 =$database->query("SELECT product.product_ID,product.product_Name,requisition_detail.Number_Req,requisition.Requisition_Date,requisition.Status FROM product JOIN requisition_detail ON product.product_ID=requisition_detail.product_ID JOIN requisition ON requisition_detail.Requisition_ID= requisition.Requisition_ID ".$pid."")->findAll() ;
+	$result2 =$database->query("SELECT product.Product_ID,product.Product_Name,requisition_detail.Number_Req,requisition.Requisition_Date,requisition.Status FROM product JOIN requisition_detail ON product.Product_ID=requisition_detail.Product_ID JOIN requisition ON requisition_detail.Requisition_ID= requisition.Requisition_ID ".$pid."")->findAll() ;
 
-    $result3 =$database->query("SELECT product.product_ID,product.product_Name,returnorder_detail.NumberReturn,returnoder.ReturnDate,returnoder.Status FROM product JOIN returnorder_detail ON product.product_ID=returnorder_detail.product_ID JOIN returnoder ON returnorder_detail.ReturnOder_ID= returnoder.ReturnOder_ID ".$pid."")->findAll() ;
+    $result3 =$database->query("SELECT product.Product_ID,product.Product_Name,returnorder_detail.NumberReturn,returnoder.ReturnDate,returnoder.Status FROM product JOIN returnorder_detail ON product.Product_ID=returnorder_detail.Product_ID JOIN returnoder ON returnorder_detail.ReturnOder_ID= returnoder.ReturnOder_ID ".$pid."")->findAll() ;
 	
 
 
@@ -95,8 +95,8 @@ else{
             <form method="POST" action="movementproduct.php" > 
             
                   
-                  <input type="hidden" class="form-control" name="product_ID" value="<?=$num;?>"><br>
-                  <input type="text" class="form-control" name="product_Name" value="<?=$num;?>"><br>
+                  <input type="hidden" class="form-control" name="Product_ID" value="<?=$num;?>"><br>
+                  <input type="text" class="form-control" name="Product_Name" value="<?=$num;?>"><br>
            
 					
 					                                
@@ -162,7 +162,7 @@ else{
 
 		                                <tr>
 		                                    <td align=right><?=$index;?></td>
-		                                    <td align=right><?=$field->product_ID;?></td>
+		                                    <td align=right><?=$field->Product_ID;?></td>
 		                                    
 		                                    <td align=right>เบิก</td>
 		                                        <td align=right>
@@ -200,7 +200,7 @@ else{
 
 		                                <tr>
 		                                    <td align=right><?=$index;?></td>
-		                                    <td align=right><?=$field->product_ID;?></td>
+		                                    <td align=right><?=$field->Product_ID;?></td>
 		                                    
 		                                    <td align=right>สั่งซื้อ</td>
 		                                        <td align=right>
@@ -237,7 +237,7 @@ else{
 
                                         <tr>
                                             <td align=right><?=$index;?></td>
-                                            <td align=right><?=$field->product_ID;?></td>
+                                            <td align=right><?=$field->Product_ID;?></td>
                                             
                                             <td align=right>คืน</td>
                                                 <td align=right>
@@ -303,14 +303,14 @@ else{
                 <?php 
                 foreach ($product as $data) {
                     echo '<tr>
-                    <td>'.$data->product_ID.'</td>
-                    <td>'.$data->product_Name.'</td>
+                    <td>'.$data->Product_ID.'</td>
+                    <td>'.$data->Product_Name.'</td>
                    
                     <td>'.$data->Price.'</td>
                     <td>'.$data->Numstock.'</td>
                     <td><button type="button" class="btn btn-danger btn-lg btn-block select-product" 
-                        data-id="'.$data->product_ID.'"
-                        data-name="'.$data->product_Name.'" 
+                        data-id="'.$data->Product_ID.'"
+                        data-name="'.$data->Product_Name.'" 
                         data-unit="'.$data->Unit.'"
                         data-price="'.$data->Price.'"
                         data data-dismiss="modal">เลือก</button></td>
@@ -348,8 +348,8 @@ $( document ).ready(function() {
                  var name = $(this).data("name");
                 // var unit = $(this).data("unit");
                 // var price = $(this).data("price");
-                $(_this).parent().parent().find("input[name=product_ID]").val(id);
-                $(_this).parent().parent().find("input[name=product_Name]").val(name);
+                $(_this).parent().parent().find("input[name=Product_ID]").val(id);
+                $(_this).parent().parent().find("input[name=Product_Name]").val(name);
                 // $(_this).parent().parent().find("input[name=Unit]").val(unit);
                 // $(_this).parent().parent().find("input[name=Price]").val(price);
             });

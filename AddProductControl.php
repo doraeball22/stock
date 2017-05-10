@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$allPosts = $_POST['product_ID'];
+$allPosts = $_POST['Product_ID'];
 $countPosts = count($allPosts);
 
 
@@ -18,7 +18,7 @@ $sql = "INSERT INTO requisition (Requisition_ID,Requisition_Date,UserID,Name,Del
 $database->query($sql);
 
 for ($i=0; $i < $countPosts; $i++) { 
-	$sql2="INSERT INTO requisition_detail (Number_Req,TotalPay,product_ID,Requisition_ID,created_date,updated_date) VALUES ('".$_POST["Number_Req"][$i]."','".$_POST["TotalPay"][$i]."','".$_POST["product_ID"][$i]."','".$_POST['Requisition_ID']."','"."0"."','"."0"."')" ;  
+	$sql2="INSERT INTO requisition_detail (Number_Req,TotalPay,Product_ID,Requisition_ID,created_date,updated_date) VALUES ('".$_POST["Number_Req"][$i]."','".$_POST["TotalPay"][$i]."','".$_POST["Product_ID"][$i]."','".$_POST['Requisition_ID']."','"."0"."','"."0"."')" ;  
 	$database->query($sql2);
 }
 

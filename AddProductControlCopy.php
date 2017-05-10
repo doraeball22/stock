@@ -13,13 +13,13 @@ $servername = "localhost";
 $conn = new mysqli($servername, $username, $password,$database);
  mysqli_set_charset($conn,"utf8");
 // print_r($_POST);exit();
- $query = "SELECT * FROM product WHERE product_Name = '" . $_POST['product_Name'] . "'";
+ $query = "SELECT * FROM product WHERE Product_Name = '" . $_POST['Product_Name'] . "'";
 			$result = mysqli_query($conn, $query);
 			if (mysqli_fetch_array($result) > 0) {
 				echo "<script type=\"text/javascript\">alert(\"Name product Already Exists\");window.location.href='add_product.php';</script>";
 				die();
 			};
-$addpro->product_Name=$_POST["product_Name"];
+$addpro->Product_Name=$_POST["Product_Name"];
 
 $addpro->Price=$_POST["Price"];
 // $addpro->Price=number_format( $_POST["Price"] , 2 )."<br />";
@@ -41,7 +41,7 @@ $addpro->addproduct($conn,$addpro);
 
 // $sql = "INSERT INTO requisition (Requisition_ID,Requisition_Date,UserID,Name,DeliveryDate,Status) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["UserID"]."','".$_POST["Name"]."','".""."','"."0"."')" ;
 
-// $sql2="INSERT INTO requisition_detail (Requisition_ID,Requisition_Date,TotalPay,Number_Req,product_ID) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["TotalPay"]."','".$_POST["Number_Req"]."','".$_POST["product_ID"]."')" ;  
+// $sql2="INSERT INTO requisition_detail (Requisition_ID,Requisition_Date,TotalPay,Number_Req,Product_ID) VALUES ('".$_POST["Requisition_ID"]."','".$_POST["Requisition_Date"]."','".$_POST["TotalPay"]."','".$_POST["Number_Req"]."','".$_POST["Product_ID"]."')" ;  
 
 
 

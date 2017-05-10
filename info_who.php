@@ -85,8 +85,8 @@
                             while($rows=mysqli_fetch_array($result)){ 
                         ?> 
                                     <tr>
-                                        <td><?php echo $rows['product_ID']; ?></td>
-                                        <td><?php echo $rows['product_Name']; ?></td>  
+                                        <td><?php echo $rows['Product_ID']; ?></td>
+                                        <td><?php echo $rows['Product_Name']; ?></td>  
                                         <td><?php echo $rows['Price']; ?></td> 
                                     
                                         <td><?php echo $rows['Unit']; ?></td>
@@ -115,7 +115,7 @@
                                         <td>
                                              
                                     <form  name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="DeleteproductControl.php">    
-                                         <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
+                                         <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
 
                                          <button class="btn btn-primary waves-effect"   data-type="confirm">ลบ</button>
                                     </form> </td>
@@ -124,8 +124,8 @@
                                     
                                     <form name="sentMessage1" id="contactForm" novalidate role="form" method="POST" action="edit_product.php">
 
-                                    <input type="hidden" name="product_ID" value="<?php echo $rows['product_ID']; ?>">
-                                    <input type="hidden" name="product_Name" value="<?php echo $rows['product_Name']; ?>">
+                                    <input type="hidden" name="Product_ID" value="<?php echo $rows['Product_ID']; ?>">
+                                    <input type="hidden" name="Product_Name" value="<?php echo $rows['Product_Name']; ?>">
                                     <input type="hidden" name="Price" value="<?php echo $rows['Price']; ?>">
                                     <input type="hidden" name="Unit" value="<?php echo $rows['Unit']; ?>">
                                     <input type="hidden" name="Numstock" value="<?php echo $rows['Numstock']; ?>">

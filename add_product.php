@@ -64,7 +64,7 @@
                                     
                                          <label class="form-label">ชื่อสินค้า</label>
                                                                                 
-                                           <input type="text" class="form-control" name="product_Name" placeholder="product_Name" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}" required autofocus>
+                                           <input type="text" class="form-control" name="Product_Name" placeholder="Product_Name" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}" required autofocus>
                                        
                                     
                                 </div>

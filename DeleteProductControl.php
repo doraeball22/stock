@@ -21,7 +21,7 @@
 
 			//$query = mysqli_query($conn,"SELECT * FROM `page` WHERE 1");
 
-			$detproduct->product_ID=$_POST['product_ID'];
+			$detproduct->Product_ID=$_POST['Product_ID'];
 			$detproduct->deleteproduct($conn,$detproduct);	
 	
 	?>

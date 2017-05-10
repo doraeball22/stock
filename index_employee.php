@@ -116,8 +116,8 @@ $return = count($result);
                             while($rows=mysqli_fetch_array($result)){ 
                         ?> 
                                     <tr>
-                                        <td align=right><?php echo $rows['product_ID']; ?></td>
-                                        <td><?php echo $rows['product_Name']; ?></td>  
+                                        <td align=right><?php echo $rows['Product_ID']; ?></td>
+                                        <td><?php echo $rows['Product_Name']; ?></td>  
                                         <td align=right ><?php echo number_format($rows['Price'], 2, '.', ','); ?></td>  
                                     
                                         <td><?php echo $rows['Unit']; ?></td>

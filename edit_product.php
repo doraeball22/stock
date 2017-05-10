@@ -29,8 +29,8 @@
         $result = mysqli_query($conn,$query);
        
        
-        $product_ID=$_POST['product_ID'];
-        $product_Name=$_POST["product_Name"];
+        $Product_ID=$_POST['Product_ID'];
+        $Product_Name=$_POST["Product_Name"];
         $Price=$_POST["Price"];
         $Unit=$_POST["Unit"];
         $Numstock=$_POST["Numstock"];
@@ -63,13 +63,13 @@
                             <form class="form-horizontal" method="POST" action="EditproductControl.php"> 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="product_Name">ชื่อสินค้า</label>
+                                        <label for="Product_Name">ชื่อสินค้า</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                             <input type="text" class="form-control" name="product_Name" placeholder="ชื่อ-สกุล" value='<?php echo $product_Name ?>' onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='<?php echo $product_Name ?>';}" required autofocus/>
-                         <input type="hidden" name="product_ID" value='<?php echo $product_ID ?>'/>
+                                             <input type="text" class="form-control" name="Product_Name" placeholder="ชื่อ-สกุล" value='<?php echo $Product_Name ?>' onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='<?php echo $Product_Name ?>';}" required autofocus/>
+                         <input type="hidden" name="Product_ID" value='<?php echo $Product_ID ?>'/>
                                             </div>
                                         </div>
                                     </div>

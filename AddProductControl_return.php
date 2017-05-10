@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$allPosts = $_POST['product_ID'];
+$allPosts = $_POST['Product_ID'];
 $countPosts = count($allPosts);
 
 
@@ -19,7 +19,7 @@ $database->query($sql);
 
 
 for ($i=0; $i < $countPosts; $i++) { 
-	$sql2="INSERT INTO returnorder_detail (TotalPay,product_ID,NumberReturn,ReturnOder_ID,created_date,updated_date) VALUES ('".$_POST["TotalPay"][$i]."','".$_POST["product_ID"][$i]."','".$_POST["NumberReturn"][$i]."','".$_POST["ReturnOder_ID"]."','"."0"."','"."0"."')" ;  
+	$sql2="INSERT INTO returnorder_detail (TotalPay,Product_ID,NumberReturn,ReturnOder_ID,created_date,updated_date) VALUES ('".$_POST["TotalPay"][$i]."','".$_POST["Product_ID"][$i]."','".$_POST["NumberReturn"][$i]."','".$_POST["ReturnOder_ID"]."','"."0"."','"."0"."')" ;  
 	$database->query($sql2);
 }
 

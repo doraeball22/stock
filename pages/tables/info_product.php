@@ -657,10 +657,10 @@
 
                         <tbody>
                                     <tr>
-                                        <td><?php echo $rows['product_ID']; ?></td>
-                                        <td><?php echo $rows['product_Name']; ?></td>  
+                                        <td><?php echo $rows['Product_ID']; ?></td>
+                                        <td><?php echo $rows['Product_Name']; ?></td>  
                                         <td><?php echo $rows['Price']; ?></td> 
-                                        <td><?php echo $rows['product_Brand']; ?></td>
+                                        <td><?php echo $rows['Product_Brand']; ?></td>
                                         <td><?php echo $rows['product_Detail']; ?></td>
                                         <td><?php echo $rows['productType_ID']; ?></td>
                                         <td><?php echo $rows['Wholesalers_ID']; ?></td>

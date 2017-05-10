@@ -17,15 +17,15 @@ $result2 =  $database->query("SELECT * From wholesalers as w JOIN  returnoder as
  // print_r($result2);exit();
 // print_r($result1);exit();
 
-$result =  $database->query("SELECT R.NumberReturn, R.TotalPay, P.product_ID, R.ReturnOder_ID,P.product_Name, P.Price,P.Numstock,Po.Status FROM product AS P JOIN returnorder_detail AS R ON P.product_ID = R.product_ID JOIN returnoder as Po on R.ReturnOder_ID=Po.ReturnOder_ID where Po.ReturnOder_ID='".$_GET['id']."'" )->findAll();
+$result =  $database->query("SELECT R.NumberReturn, R.TotalPay, P.Product_ID, R.ReturnOder_ID,P.Product_Name, P.Price,P.Numstock,Po.Status FROM product AS P JOIN returnorder_detail AS R ON P.Product_ID = R.Product_ID JOIN returnoder as Po on R.ReturnOder_ID=Po.ReturnOder_ID where Po.ReturnOder_ID='".$_GET['id']."'" )->findAll();
 
 
-// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.product_ID = R.product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
+// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.Product_ID = R.Product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
 
-// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,Re.Status 
+// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,Re.Status 
 // FROM requisition_detail AS R
 // JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID
-// JOIN product AS P ON R.product_ID= P.product_ID
+// JOIN product AS P ON R.Product_ID= P.Product_ID
 // where Re.Requisition_ID='".$_GET['id']."' ORDER BY Status ASC"
  //print_r($result);exit;
 ?>
@@ -123,8 +123,8 @@ $result =  $database->query("SELECT R.NumberReturn, R.TotalPay, P.product_ID, R.
 		                                <tr>
 		                                    <td><?=$index;?></td>
 		                                    
-		                                    <td align=right><?=$field->product_ID;?></td>
-		                                   <td><?=$field->product_Name;?></td>
+		                                    <td align=right><?=$field->Product_ID;?></td>
+		                                   <td><?=$field->Product_Name;?></td>
 		                                 	<td align=right><?=$field->Numstock;?></td>
 		                                 	<td align=right><?=$field->NumberReturn;?></td>
 		                                 	<td align=right><?=number_format($field->Price, 2, '.', ',');?></td>

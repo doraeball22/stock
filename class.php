@@ -119,15 +119,15 @@ else
 }
 
 	class product{	
-		   public $product_ID;
+		   public $Product_ID;
 	
 	public function deleteproduct($conn,$detproduct)
 					{
 
-						if(isset($detproduct->product_ID))
+						if(isset($detproduct->Product_ID))
 						{
-							echo $detproduct->product_ID;
-							$deletesql = "DELETE FROM product 										WHERE product.product_ID =".$detproduct->product_ID."";
+							echo $detproduct->Product_ID;
+							$deletesql = "DELETE FROM product 										WHERE product.Product_ID =".$detproduct->Product_ID."";
 							if ($conn->query($deletesql) === TRUE)	{
 							$message = "Delete success!";
 							echo "<script type='text/javascript'>alert('$message');</script>";
@@ -138,7 +138,7 @@ else
 						else
 						{
 							$message = "Delete fail!";
-							echo $detproduct->product_ID ;
+							echo $detproduct->Product_ID ;
 							//echo "<script type='text/javascript'>alert('$message');</script>";
 							echo "error" . $conn->error;
 							mysqli_close($conn);
@@ -147,8 +147,8 @@ else
 					}
 		public	function editproduct($conn,$editpro)
 		{
-		echo " <script type='text/javascript'>alert('$editpro->product_ID');</script>";
-		$editpro="UPDATE product SET product_Name = '$editpro->product_Name', Price = '$editpro->Price',Unit = '$editpro->Unit',Numstock = '$editpro->Numstock',ExpDate = '$editpro->ExpDate',Wholesalers_ID = '$editpro->Wholesalers_ID',productType_ID = '$editpro->productType_ID' WHERE product_ID='".$editpro->product_ID."'";
+		echo " <script type='text/javascript'>alert('$editpro->Product_ID');</script>";
+		$editpro="UPDATE product SET Product_Name = '$editpro->Product_Name', Price = '$editpro->Price',Unit = '$editpro->Unit',Numstock = '$editpro->Numstock',ExpDate = '$editpro->ExpDate',Wholesalers_ID = '$editpro->Wholesalers_ID',productType_ID = '$editpro->productType_ID' WHERE Product_ID='".$editpro->Product_ID."'";
 
 
 
@@ -183,8 +183,8 @@ else
 				public function addproduct($conn,$addpro)
 									{
 
-											$sql = "INSERT INTO product (product_Name,Price,Unit,Numstock,SafetyStock,ExpDate,Wholesalers_ID,productType_ID)
-				VALUES ('".$addpro->product_Name."','".$addpro->Price."','".$addpro->Unit."','".$addpro->Numstock."','".$addpro->SafetyStock."','".$addpro->ExpDate."','".$addpro->Wholesalers_ID."','".$addpro->productType_ID."')" ;
+											$sql = "INSERT INTO product (Product_Name,Price,Unit,Numstock,SafetyStock,ExpDate,Wholesalers_ID,productType_ID)
+				VALUES ('".$addpro->Product_Name."','".$addpro->Price."','".$addpro->Unit."','".$addpro->Numstock."','".$addpro->SafetyStock."','".$addpro->ExpDate."','".$addpro->Wholesalers_ID."','".$addpro->productType_ID."')" ;
 											if ($conn->query($sql) === TRUE)	{
 											$message = "Insert New product success!";
 											echo "<script type='text/javascript'>alert('$message');</script>";

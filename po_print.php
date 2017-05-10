@@ -19,15 +19,15 @@ $result2 =  $database->query("SELECT * From wholesalers as w JOIN purchaseorder 
  // print_r($result2);exit();
 
 
-$result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.product_ID, R.PO_ID, R.PO_ID, P.product_Name, P.Price,P.Numstock,Po.Status FROM product AS P JOIN po_detail AS R ON P.product_ID = R.product_ID JOIN purchaseorder as Po on R.PO_ID=Po.PO_ID where Po.PO_ID='".$_GET['id']."'" )->findAll();
+$result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.Product_ID, R.PO_ID, R.PO_ID, P.Product_Name, P.Price,P.Numstock,Po.Status FROM product AS P JOIN po_detail AS R ON P.Product_ID = R.Product_ID JOIN purchaseorder as Po on R.PO_ID=Po.PO_ID where Po.PO_ID='".$_GET['id']."'" )->findAll();
 
 
-// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.product_ID = R.product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
+// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,R.Status FROM product AS P JOIN requisition_detail AS R ON P.Product_ID = R.Product_ID JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID where Re.Requisition_ID='".$_GET['id']."'"
 
-// "SELECT R.Number_Req, R.TotalPay, P.product_ID, R.Requisition_ID, R.Requisition_Date, P.product_Name, P.Price,P.Numstock,Re.Status 
+// "SELECT R.Number_Req, R.TotalPay, P.Product_ID, R.Requisition_ID, R.Requisition_Date, P.Product_Name, P.Price,P.Numstock,Re.Status 
 // FROM requisition_detail AS R
 // JOIN requisition as Re on R.Requisition_ID=Re.Requisition_ID
-// JOIN product AS P ON R.product_ID= P.product_ID
+// JOIN product AS P ON R.Product_ID= P.Product_ID
 // where Re.Requisition_ID='".$_GET['id']."' ORDER BY Status ASC"
  //print_r($result);exit;
 ?>
@@ -178,8 +178,8 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.product_ID,
 		                                <tr>
 		                                    <td><?=$index;?></td>
 		                                   
-		                                    <td align=right><?=$field->product_ID;?></td>
-		                                   <td><?=$field->product_Name;?></td>
+		                                    <td align=right><?=$field->Product_ID;?></td>
+		                                   <td><?=$field->Product_Name;?></td>
 		                                 	<td align=right><?=$field->Numstock;?></td>
 		                                 	<td align=right><?=$field->Quantity;?></td>		                                       
 		                                    <td align=right><?=number_format($field->Price, 2, '.', ',');?></td>
@@ -275,18 +275,18 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.product_ID,
                 ?>
                     <tr>
                     <input type="hidden" name="PO_ID" value="<?php echo $data->PO_ID;?>">
-                    <input type="hidden" name="product_ID" value="<?=$data->product_ID?>">               
-                    <td align=right><?php echo $data->product_ID; ?></td>
-                        <td ><?php echo $data->product_Name ?></td>
+                    <input type="hidden" name="Product_ID" value="<?=$data->Product_ID?>">               
+                    <td align=right><?php echo $data->Product_ID; ?></td>
+                        <td ><?php echo $data->Product_Name ?></td>
                        
                         <td align=right><?= number_format($data->Price, 2, '.', ',') ?></td>
                          <td ><?=$data->Unit?></td>
                         <td align=right><?= $data->Numstock ?></td>
                         <td align=right>
-                        <input type="number" id='product_<?=$data->product_ID?>' name="Quantity" class="form-control" value="<?= $data->Quantity ?>">
+                        <input type="number" id='product_<?=$data->Product_ID?>' name="Quantity" class="form-control" value="<?= $data->Quantity ?>">
                         </td>
                         <td> <input type="button"  class="btn btn-primary"  value="อัพเดท"
-                        onclick="update_po('<?=$data->PO_ID?>','<?=$data->product_ID?>')" /> </td> 
+                        onclick="update_po('<?=$data->PO_ID?>','<?=$data->Product_ID?>')" /> </td> 
                
 	                       
                   </tr>
@@ -366,8 +366,8 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.product_ID,
                 var amount = $(this).find('input[name="amount"]').val();
                 if(amount > 0){
                     tbody = tbody+'<tr>'+                                     
-                        '<td><input value="'+id+'" type="text" class="form-control" name="product_ID[]" readonly="true"></td>'+
-                        '<td><input value="'+name+'" type="text" class="form-control" name="product_Name[]" readonly="true"></td>'+  
+                        '<td><input value="'+id+'" type="text" class="form-control" name="Product_ID[]" readonly="true"></td>'+
+                        '<td><input value="'+name+'" type="text" class="form-control" name="Product_Name[]" readonly="true"></td>'+  
                         '<td><input value="'+amount+'" type="number" class="form-control" name="Quantity[]" min="1" text="1"></td>'+
                         '<td><input value="'+price+'" type="text" class="form-control" name="Price[]" readonly="true"></td>'+
                         '<td><input value="'+unit+'" type="text" class="form-control" name="Unit[]" readonly="true"></td>'+
@@ -423,14 +423,14 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.product_ID,
 	});
 </script> -->
 <script type="text/javascript">
-  var update_po =function(PO_ID,product_ID){
-    Quantity = $('#product_'+product_ID).val();
+  var update_po =function(PO_ID,Product_ID){
+    Quantity = $('#product_'+Product_ID).val();
     $.ajax({
       url:"../stock/update_po.php",
       type : "POST",
       data : {
         "PO_ID":PO_ID,
-        "product_ID":product_ID,
+        "Product_ID":Product_ID,
         "Quantity":Quantity
       },
       success : function(){

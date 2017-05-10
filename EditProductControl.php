@@ -12,8 +12,8 @@
 			mysqli_set_charset($conn,"utf8");
 
 		    	
-		    	$editpro->product_ID=$_POST['product_ID'];
-		    	$editpro->product_Name=$_POST["product_Name"];
+		    	$editpro->Product_ID=$_POST['Product_ID'];
+		    	$editpro->Product_Name=$_POST["Product_Name"];
 		    	$editpro->Price=$_POST["Price"];
 		    	$editpro->Unit=$_POST["Unit"];
 		    	$editpro->Numstock=$_POST["Numstock"];

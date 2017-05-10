@@ -6,7 +6,7 @@ $database = new DB();
  // var_dump($_POST);
  // die();
 
-$result =  $database->query("UPDATE po_detail SET Quantity='".$_POST['Quantity']."' WHERE 	product_ID='".$_POST['product_ID']."'and PO_ID='".$_POST['PO_ID']."'" );
+$result =  $database->query("UPDATE po_detail SET Quantity='".$_POST['Quantity']."' WHERE 	Product_ID='".$_POST['Product_ID']."'and PO_ID='".$_POST['PO_ID']."'" );
 
 
 ?>

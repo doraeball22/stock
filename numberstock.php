@@ -28,10 +28,10 @@ $database = new DB();
         $timeshift = date_format($timeshift, 'Y-m-d');
         echo "<script> console.log('" . $timeshift . "');</script>";
                           
-       	$result2 = $database->query("SELECT P.product_ID,P.product_Name,R.Requisition_Date,P.Numstock,P.Price,P.SafetyStock FROM product AS P JOIN requisition_detail AS Rt ON P.product_ID=Rt.product_ID JOIN requisition as R on Rt.Requisition_ID=R.Requisition_ID WHERE R.Requisition_Date <= '".$timeshift."' GROUP BY P.product_ID")->findAll();
+       	$result2 = $database->query("SELECT P.Product_ID,P.Product_Name,R.Requisition_Date,P.Numstock,P.Price,P.SafetyStock FROM product AS P JOIN requisition_detail AS Rt ON P.Product_ID=Rt.Product_ID JOIN requisition as R on Rt.Requisition_ID=R.Requisition_ID WHERE R.Requisition_Date <= '".$timeshift."' GROUP BY P.Product_ID")->findAll();
     }else{
 
-    $result2 =$database->query("SELECT P.product_ID,P.product_Name,R.Requisition_Date,P.Numstock,P.Price,P.SafetyStock FROM product AS P JOIN requisition_detail AS Rt ON P.product_ID=Rt.product_ID JOIN requisition as R on Rt.Requisition_ID=R.Requisition_ID GROUP BY P.product_ID")->findAll() ;
+    $result2 =$database->query("SELECT P.Product_ID,P.Product_Name,R.Requisition_Date,P.Numstock,P.Price,P.SafetyStock FROM product AS P JOIN requisition_detail AS Rt ON P.Product_ID=Rt.Product_ID JOIN requisition as R on Rt.Requisition_ID=R.Requisition_ID GROUP BY P.Product_ID")->findAll() ;
 	}
 
 
@@ -136,8 +136,8 @@ $database = new DB();
 
 		                                <tr>
 		                                    <td><?=$index;?></td>
-		                                    <td  align=right><?=$field->product_ID;?></td>
-		                                    <td><?=$field->product_Name;?></td>
+		                                    <td  align=right><?=$field->Product_ID;?></td>
+		                                    <td><?=$field->Product_Name;?></td>
 		                                    <td  align=right><?=date('d/m/Y', strtotime($field->	Requisition_Date));?></td>
    											 <td align=right><?=number_format($field->Price, 2, '.', ',');?></td>
 		                                     <td align=right><?=$field->Numstock<=$field->SafetyStock?'<font color="red">'.$field->Numstock.'</font>':$field->Numstock;?></td>

@@ -152,15 +152,15 @@ z
                 <?php 
                     foreach ($product as $data) {
                         echo '<tr>
-                        <td align=right>'.$data->product_ID.'</td>
-                        <td align=right>'.$data->product_Name.'</td>
+                        <td align=right>'.$data->Product_ID.'</td>
+                        <td align=right>'.$data->Product_Name.'</td>
                        
                         <td align=right>'.$data->Price.'</td>
                          <td align=right>'.$data->Unit.'</td>
                         <td align=right>'.$data->Numstock.'</td>
                         <td align=right><input type="input" class="form-control" name="amount"
-                            data-id="'.$data->product_ID.'"
-                            data-name="'.$data->product_Name.'" 
+                            data-id="'.$data->Product_ID.'"
+                            data-name="'.$data->Product_Name.'" 
                             data-unit="'.$data->Unit.'"
                             data-price="'.$data->Price.'"></td></tr>';
                     }
@@ -215,8 +215,8 @@ z
                 var amount = $(this).find('input[name="amount"]').val();
                 if(amount > 0){
                     tbody = tbody+'<tr>'+                                     
-                        '<td><input value="'+id+'" type="text" class="form-control" name="product_ID[]" readonly="true"></td>'+
-                        '<td><input value="'+name+'" type="text" class="form-control" name="product_Name[]" readonly="true"></td>'+  
+                        '<td><input value="'+id+'" type="text" class="form-control" name="Product_ID[]" readonly="true"></td>'+
+                        '<td><input value="'+name+'" type="text" class="form-control" name="Product_Name[]" readonly="true"></td>'+  
                         '<td><input value="'+amount+'" type="number" class="form-control" name="NumberReturn[]" min="1" text="1"></td>'+
                         '<td><input value="'+price+'" type="text" class="form-control" name="Price[]" readonly="true"></td>'+
                         '<td><input value="'+unit+'" type="text" class="form-control" name="Unit[]" readonly="true"></td>'+

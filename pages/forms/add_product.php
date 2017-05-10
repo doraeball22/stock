@@ -834,7 +834,7 @@
                                     <div class="form-group">
                                          <label class="form-label">ชื่อสินค้า</label>
                                          <div class="form-line">                                       
-                                           <input type="text" class="form-control" name="product_Name" placeholder="product_Name" required>
+                                           <input type="text" class="form-control" name="Product_Name" placeholder="Product_Name" required>
                                         </div>
                                     </div>
                                 </div>
