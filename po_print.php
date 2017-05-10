@@ -146,7 +146,7 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.Product_ID,
 	                                    
 	                                    <th>รหัสสินค้า</th>
 	                                    <th>ชื่อสินค้า</th>                       
-	                                    <th>คงเหลือ</th>
+	                                 <!--    <th>คงเหลือ</th> -->
 	                                     <th>จำนวนที่สั่ง</th>
 	                                    <th>ราคาต่อหน่วย</th>
 	                                    <th>หน่วยนับ</th>
@@ -180,7 +180,7 @@ $result =  $database->query("SELECT P.Unit,R.Quantity, R.TotalPay, P.Product_ID,
 		                                   
 		                                    <td align=right><?=$field->Product_ID;?></td>
 		                                   <td><?=$field->Product_Name;?></td>
-		                                 	<td align=right><?=$field->Numstock;?></td>
+		                                 	<!-- <td align=right><?=$field->Numstock;?></td> -->
 		                                 	<td align=right><?=$field->Quantity;?></td>		                                       
 		                                    <td align=right><?=number_format($field->Price, 2, '.', ',');?></td>
 		                                    <td align=right><?=$field->Unit;?></td>
