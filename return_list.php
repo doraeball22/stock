@@ -96,7 +96,7 @@ $result =  $database->query("SELECT * FROM returnoder where UserID='".$_SESSION[
 		                                  <td align=right><?=$field->Position;?></td> 
 		                                        
 		                                    <td><a href="return_detail.php?id=<?=$field->ReturnOder_ID;?>" class="btn bg-blue-grey waves-effect">ตรวจสอบ</a></td>
-		                                    <td><a href="return_print.php?id=<?=$field->ReturnOder_ID;?>" class="btn bg-grey waves-effect">พิมพ์ใบสั่งซื้อ</a></td>
+		                                    <td><a href="return_print.php?id=<?=$field->ReturnOder_ID;?>" class="btn bg-grey waves-effect">พิมพ์ใบคืนสินค้า</a></td>
 
 
 
